@@ -2,6 +2,10 @@ name: Daily Weaher2024 Super Bot
 
 on: 
     push:
+
+env: 
+    TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+    TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
 jobs:
   Daily-Run-Weather:
     runs-on: ubuntu-latest
