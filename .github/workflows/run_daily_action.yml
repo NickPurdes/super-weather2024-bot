@@ -3,7 +3,7 @@ name: Daily Weaher2024 Super Bot
 on: 
     # push:
     schedule:
-      - cron: '*/2 * * * *'
+    - cron: '30 6,13 * * *'
 
 env: 
     TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
