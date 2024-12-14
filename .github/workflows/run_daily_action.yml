@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout Code
-          uses: actions/checkout@v4          
+          uses: actions/checkout@v4    
+        - name: Install Dependencies
+          run: pip install requirements.txt      
         - name: Run App
           run: python app.py
