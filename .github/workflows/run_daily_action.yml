@@ -1,0 +1,10 @@
+name: Daily Weaher2024 Super Bot
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Daily-Run-Weather:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout Code
+          uses: actions/checkout@v4          
+        - run: echo "🍏 This job's status is ${{ job.status }}."
