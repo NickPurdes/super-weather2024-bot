@@ -1,6 +1,7 @@
 name: Daily Weaher2024 Super Bot
 
-on: [push]
+on: 
+    push:
 jobs:
   Daily-Run-Weather:
     runs-on: ubuntu-latest
