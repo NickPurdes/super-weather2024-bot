@@ -57,7 +57,7 @@ def get_weather():
         .highlight_min(color='yellow',axis=0, subset='temp')\
         .highlight_max(color='green', axis=0, subset='temp')
         
-    return df_styled.to_string(sparse_columns=True)
+    return df_styled.to_string(sparse_index=True, delimiter='|', sparse_columns=True)
 
 
 def send_message(message):
