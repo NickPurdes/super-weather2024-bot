@@ -42,8 +42,8 @@ def get_weather():
     hourly_relative_humidity_2m = hourly.Variables(1).ValuesAsNumpy()
 
     hourly_data = {"date": pd.date_range(
-        start = pd.to_datetime(hourly.Time(), unit = "s", utc = False),
-        end = pd.to_datetime(hourly.TimeEnd(), unit = "s", utc = False),
+        start = pd.to_datetime(hourly.Time(), unit = "m", utc = False),
+        end = pd.to_datetime(hourly.TimeEnd(), unit = "m", utc = False),
         freq = pd.Timedelta(seconds = hourly.Interval()),
         inclusive = "left"
     )}
