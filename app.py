@@ -66,7 +66,7 @@ def send_message(message):
         'text': message
     }
     res = requests.get(url, params=params)
-    return res.json()
+    return res
 
 if __name__ == '__main__' :
     weather = get_weather()
