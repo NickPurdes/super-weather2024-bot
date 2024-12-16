@@ -50,8 +50,10 @@ def get_weather():
     hourly_data["temperature_2m"] = hourly_temperature_2m
     hourly_data["relative_humidity_2m"] = hourly_relative_humidity_2m
 
-    hourly_dataframe = pd.DataFrame(data = hourly_data)
-    return hourly_dataframe.to_string(index=None)
+    hourly_dataframe = pd.DataFrame(data = hourly_data, index=None)
+    df_styled = hourly_dataframe.style\
+        .format(precision=1)
+    return df_styled
 
 
 def send_message(message):
