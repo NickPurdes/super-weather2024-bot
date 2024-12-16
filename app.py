@@ -53,7 +53,7 @@ def get_weather():
     hourly_dataframe = pd.DataFrame(data = hourly_data, index=None)
     df_styled = hourly_dataframe.style\
         .format(precision=1)
-    return df_styled
+    return df_styled.to_latex()
 
 
 def send_message(message):
@@ -66,7 +66,7 @@ def send_message(message):
         'text': message
     }
     res = requests.get(url, params=params)
-    return res
+    return res.json()
 
 if __name__ == '__main__' :
     weather = get_weather()
