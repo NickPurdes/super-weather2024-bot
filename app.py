@@ -55,7 +55,7 @@ def get_weather():
     df_styled = hourly_dataframe.iloc[-10:].style\
         .format(precision=1)
         
-    return df_styled.to_excel()
+    return df_styled.to_latex()
 
 
 def send_message(message):
