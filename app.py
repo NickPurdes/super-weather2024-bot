@@ -52,7 +52,9 @@ def get_weather():
 
     hourly_dataframe = pd.DataFrame(data = hourly_data, index=None)
     df_styled = hourly_dataframe.style\
-        .format(precision=1)
+        .format(precision=1)\
+        .highlight_max(color='yellowgreen', subset=["temperature_2m"])\
+        .highlight_min(color='coral', subset=["temperature_2m"])
     return df_styled.to_latex()
 
 
