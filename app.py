@@ -55,7 +55,7 @@ def get_weather():
         .format(precision=1)\
         .highlight_max(color='yellowgreen', subset=["temperature_2m"])\
         .highlight_min(color='coral', subset=["temperature_2m"])
-    return df_styled.to_latex()
+    return df_styled.to_string()
 
 
 def send_message(message):
