@@ -50,10 +50,9 @@ def get_weather():
     hourly_data["temperature_2m"] = hourly_temperature_2m
     hourly_data["relative_humidity_2m"] = hourly_relative_humidity_2m
 
-    hourly_dataframe = pd.DataFrame(data = hourly_data, index=None)
-    df = hourly_dataframe.rename(columns={"temperature_2m":"temp", "relative_humidity_2m":"humidity"})
+    hourly_dataframe = pd.DataFrame(data = hourly_data, index=None)    
 
-    df_styled = df.iloc[-10:].style\
+    df_styled = hourly_dataframe.iloc[-10:].style\
         .format(precision=1)\
         .highlight_max(color='yellowgreen', subset=["temperature_2m"])\
         .highlight_min(color='coral', subset=["temperature_2m"])
