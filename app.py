@@ -59,7 +59,7 @@ def get_weather():
         .format(' {}', subset='day')\
         .format('{}.00', subset='hour')\
         .format('{:.2f} C', precision=2, subset='temp')\
-        .format('{:.0} %', precision=0, subset='humidity')\
+        .format('{} %', precision=0, subset='humidity')\
         .hide(axis='index')      
         
     return df_styled.to_string(sparse_index=True, delimiter='|', sparse_columns=True)
