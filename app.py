@@ -56,10 +56,8 @@ def get_weather():
 
     df_styled = hourly_dataframe.iloc[-12:].style\
         .set_caption("Погода на сьогодні")\
-        .format(precision=2)\
-        .hide_index()\
-        .highlight_min(color='yellow',axis=0, subset='temp')\
-        .highlight_max(color='green', axis=0, subset='temp')
+        .format(precision=2)   
+      
         
     return df_styled.to_string(sparse_index=True, delimiter='|', sparse_columns=True)
 
