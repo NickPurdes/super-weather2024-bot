@@ -50,9 +50,9 @@ def get_weather():
     hourly_data["temp"] = hourly_temperature_2m
     hourly_data["humidity"] = hourly_relative_humidity_2m
     hourly_data['day']= hourly_data['date'].day
-    hourly_data['time']=hourly_data['date'].hour
+    hourly_data['hour']=hourly_data['date'].hour
     
-    hourly_dataframe = pd.DataFrame(data = hourly_data, columns=['day', 'temp', 'humidity', 'time'], index=None)   
+    hourly_dataframe = pd.DataFrame(data = hourly_data, columns=['day', 'hour', 'temp', 'humidity'], index=None)   
 
     df_styled = hourly_dataframe.iloc[-12:].style\
         .format(precision=1)\
