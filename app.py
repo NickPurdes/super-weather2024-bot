@@ -52,9 +52,9 @@ def get_weather():
     #hourly_data['date']= pd.to_datetime(hourly_data['date'], format='%Y-%m-%d')
     hourly_data['day']= hourly_data['date'].day
     
-    hourly_dataframe = pd.DataFrame(data = hourly_data, index=None)    
+    hourly_dataframe = pd.DataFrame(data = hourly_data, columns=['day', 'temp', 'humidity'], index=None)   
 
-    df_styled = hourly_dataframe.iloc[-10:].style\
+    df_styled = hourly_dataframe.iloc[-12:].style\
         .format(precision=1)\
         .highlight_min(color='yellow',axis=0, subset='temp')\
         .highlight_max(color='green', axis=0, subset='temp')
