@@ -49,6 +49,8 @@ def get_weather():
     )}
     hourly_data["temp"] = hourly_temperature_2m
     hourly_data["humidity"] = hourly_relative_humidity_2m
+    hourly_data['date']= pd.to_datetime(hourly_data['date'], format='%Y-%m-%d')
+    #hourly_data['day']= hourly_data['date'].dt.day
 
     hourly_dataframe = pd.DataFrame(data = hourly_data, index=None)    
 
