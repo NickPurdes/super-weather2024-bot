@@ -55,7 +55,9 @@ def get_weather():
     hourly_dataframe = pd.DataFrame(data = hourly_data, columns=['day', 'hour', 'temp', 'humidity'], index=None)   
 
     df_styled = hourly_dataframe.iloc[-12:].style\
-        .format(precision=1)\
+        .set_caption("Погода на сьогодні")\
+        .format(precision=2)\
+        .hide_index()\
         .highlight_min(color='yellow',axis=0, subset='temp')\
         .highlight_max(color='green', axis=0, subset='temp')
         
